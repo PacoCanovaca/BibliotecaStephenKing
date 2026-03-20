@@ -32,9 +32,21 @@ public class Book implements Serializable {
     public void printData() {
         System.out.println("Id = " + id);
         System.out.println("Title = " + title);
+        System.out.println("Year = " + year);
+        System.out.println("Number of pages = " + pages);
         System.out.println("ISBN = " + isbn);
         System.out.println("Publisher = " + publisher);
-        System.out.println("Number of pages = " + pages);
+        System.out.println("Notes = ");
+        for (String note : notes) {
+            System.out.println("\t- " + note);
+        }
+        System.out.println();
+    }
+
+    public void printSimpleData() {
+        System.out.println("Id = " + id);
+        System.out.println("Title = " + title);
+        System.out.println();
     }
 
 }
