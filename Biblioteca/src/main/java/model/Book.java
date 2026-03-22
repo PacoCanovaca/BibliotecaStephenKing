@@ -52,7 +52,8 @@ public class Book implements Serializable {
 }
 
 @lombok.Data
-class Villain {
+class Villain implements Serializable {
+    private static final long serialVersionUID = 2L;
     private String name;
     private String url;
 }
