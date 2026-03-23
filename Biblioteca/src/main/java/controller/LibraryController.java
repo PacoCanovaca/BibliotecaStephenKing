@@ -8,7 +8,7 @@ import java.util.ArrayList;
 @Getter
 public class LibraryController {
     private final ArrayList<Book> library;
-    private ArrayList<Book> favorites;
+    private final ArrayList<Book> favorites;
 
     public LibraryController() {
         library = new ArrayList<>();
@@ -42,10 +42,24 @@ public class LibraryController {
             }
         }
         favorites.add(book);
+        System.out.printf("El libro con el id %d se ha añadido a favoritos%n", book.getId());
     }
 
     public void printFavoritesSimpleData() {
         favorites.forEach(Book::printSimpleData);
+    }
+
+    public void deleteFavoriteBook(int id) {
+        Book book;
+        for (int i = 0; i < favorites.size(); i++) {
+            book = favorites.get(i);
+            if (book.getId() == id) {
+                System.out.printf("El libro con el id %d se ha eliminado de favoritos%n", book.getId());
+                favorites.remove(i);
+                return;
+            }
+        }
+        System.out.println("El id introducido no corresponde a ningún libro de la lista de favoritos");
     }
 
 }

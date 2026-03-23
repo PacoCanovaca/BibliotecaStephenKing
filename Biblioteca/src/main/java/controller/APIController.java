@@ -13,7 +13,7 @@ import java.net.URL;
 
 public class APIController {
 
-    public Library importLibrary() {
+    protected Library importLibrary() {
         try {
             URL url = new URL("https://stephen-king-api.onrender.com/api/books");
             ObjectMapper objectMapper = new ObjectMapper();
@@ -30,7 +30,7 @@ public class APIController {
         return null;
     }
 
-    public Book importBook(String urlString) {
+    protected Book importBook(String urlString) {
         try {
             URL url = new URL(urlString);
             ObjectMapper objectMapper = new ObjectMapper();
